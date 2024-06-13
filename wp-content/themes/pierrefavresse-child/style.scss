@@ -1,0 +1,184 @@
+/*
+Theme Name: theme enfant de pierrefavresse
+Description: surcouche du theme pierreFavresse
+Author: Olivier DELMAS
+Author URI: https://github.com/Sol1de
+Text Domain: pierrefavresse-child
+Template: pierrefavresse
+*/
+
+@charset "UTF-8";
+/*
+Theme Name: pierrefavresse child
+Description: thème enfant du thème parent pierrefavresse (surcouche)
+Author: Olivier Delmas
+Author URI: https://github.com/Sol1de
+Text Domain: pierrefavresse-child
+Template: pierrefavresse
+*/
+@import 'color.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* _____Header_____ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 150px;
+  align-items: flex-start;
+
+  &-logo {
+    object-fit: contain;
+  }
+
+  &-nav {
+
+    ul {
+      display: flex;
+      gap: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+
+
+      li {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: $header-clr;
+          font-size: 16px;
+          font-weight: $extra-light;
+        }
+      }
+    }
+  }
+}
+
+/*_____Landing_____*/
+.landing {
+  height: 60dvh;
+
+  &-branding {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #495057;
+      font-size: 30px;
+
+      &-we {
+        font-weight: $light;
+        text-align: center;
+        margin-right: 10px;
+        font-size: 60px;
+      }
+  
+      &-texte {
+        font-weight: $light;
+        text-align: center;
+        font-size: 60px;
+      }
+  
+      &-cursor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1px;
+        height: 54px;
+        border-top: 2px solid #ADB5BD;
+        border-bottom: 2px solid #ADB5BD;
+        color: #ADB5BD;
+        padding-inline: 10px;
+        opacity: 1;
+        font-size: 60px;
+        font-weight: 200;
+      }
+    }
+
+    &-subtitle {
+
+      &-paragraph {
+        font-weight: $light;
+        font-size: 20px;
+        color: $minimal-clr;
+      }
+    }
+  }
+}
+
+/* _____Footer_____ */
+.footer {
+  @extend .header;
+
+  &-logo {
+    @extend .header-logo;
+  }
+
+  &-container {
+    display: flex;
+    white-space: nowrap;
+
+    &-paragraph {
+      font-weight: $regular;
+      font-size: 16px;
+      color: #B4B9C9;
+    }
+
+    &-nav {
+      @extend .header-nav;
+  
+      ul {
+        gap: 0px;
+  
+        li {
+  
+          a {
+            color: $main-clr;
+            font-weight: $regular;
+            text-decoration: underline;
+          }
+  
+          span {
+            font-weight: $regular;
+            font-size: 16px;
+            padding-inline: 7px;
+            color: #B4B9C9;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*_____Animations_____*/
+.animation-blink {
+    animation: cursorBlink 1.2s infinite;
+}
+
+.appear-animation {
+    animation: Appear 0.1s ease-in-out;
+}
+
+@keyframes cursorBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes Appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+

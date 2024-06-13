@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/*
+Theme Name: theme enfant de pierrefavresse
+Description: surcouche du theme pierreFavresse
+Author: Olivier DELMAS
+Author URI: https://github.com/Sol1de
+Text Domain: pierrefavresse-child
+Template: pierrefavresse
+*/
+/*
+Theme Name: pierrefavresse child
+Description: thème enfant du thème parent pierrefavresse (surcouche)
+Author: Olivier Delmas
+Author URI: https://github.com/Sol1de
+Text Domain: pierrefavresse-child
+Template: pierrefavresse
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* _____Header_____ */
+.header, .footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 150px;
+  align-items: flex-start;
+}
+.header-logo, .footer-logo {
+  object-fit: contain;
+}
+.header-nav ul, .footer-container-nav ul {
+  display: flex;
+  gap: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header-nav ul li, .footer-container-nav ul li {
+  list-style: none;
+}
+.header-nav ul li a, .footer-container-nav ul li a {
+  text-decoration: none;
+  color: #495057;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+/*_____Landing_____*/
+.landing {
+  height: 60dvh;
+}
+.landing-branding {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.landing-branding-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #495057;
+  font-size: 30px;
+}
+.landing-branding-title-we {
+  font-weight: 300;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 60px;
+}
+.landing-branding-title-texte {
+  font-weight: 300;
+  text-align: center;
+  font-size: 60px;
+}
+.landing-branding-title-cursor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 54px;
+  border-top: 2px solid #ADB5BD;
+  border-bottom: 2px solid #ADB5BD;
+  color: #ADB5BD;
+  padding-inline: 10px;
+  opacity: 1;
+  font-size: 60px;
+  font-weight: 200;
+}
+.landing-branding-subtitle-paragraph {
+  font-weight: 300;
+  font-size: 20px;
+  color: #BAC0C6;
+}
+
+/* _____Footer_____ */
+.footer-container {
+  display: flex;
+  white-space: nowrap;
+}
+.footer-container-paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  color: #B4B9C9;
+}
+.footer-container-nav ul {
+  gap: 0px;
+}
+.footer-container-nav ul li a {
+  color: #6D758F;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.footer-container-nav ul li span {
+  font-weight: 400;
+  font-size: 16px;
+  padding-inline: 7px;
+  color: #B4B9C9;
+}
+
+/*_____Animations_____*/
+.animation-blink {
+  animation: cursorBlink 1.2s infinite;
+}
+
+.appear-animation {
+  animation: Appear 0.1s ease-in-out;
+}
+
+@keyframes cursorBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
