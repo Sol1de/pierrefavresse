@@ -150,5 +150,29 @@ Template: pierrefavresse
     opacity: 1;
   }
 }
+/* Animations d'apparition/disparition des posts */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
 
 /*# sourceMappingURL=style.css.map */
