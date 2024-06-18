@@ -112,3 +112,17 @@ function changePhrase() {
 document.addEventListener("DOMContentLoaded", function () {
     changePhrase();
 });
+
+//fonction d'animation du header au scroll
+var prevScrollpos = window.scrollY;
+window.onscroll = function() {
+var currentScrollPos = window.scrollY;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("masthead").style.top = "0";
+  } else {
+    document.getElementById("masthead").style.top = "-300px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+//fonction générat une hauteur aléatoire pour les posts

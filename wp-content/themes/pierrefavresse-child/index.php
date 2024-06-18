@@ -55,19 +55,19 @@ get_header();
             while ($query->have_posts()) : $query->the_post();
         ?>
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class('project-item'); ?>>
-                    <header class="entry-header">
-                        <h2 class="entry-title">
-                            <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
-                    </header>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('landing-projects-post project-item'); ?>>
+            <div class="landing-projects-post-content">
+                <div class="landing-projects-post-content-image">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+                <h2 class="landing-projects-post-content-title">
+                    <a href="<?php the_permalink(); ?>" rel="bookmark">
+                        <?php the_title(); ?>
+                    </a>
+                </h2>
+            </div>
+        </article><!-- #post-<?php the_ID(); ?> -->
 
-                    <div class="entry-content">
-                        <?php the_post_thumbnail(); ?>
-                    </div>
-                </article><!-- #post-<?php the_ID(); ?> -->
 
         <?php
             endwhile;

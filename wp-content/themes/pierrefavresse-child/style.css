@@ -23,26 +23,42 @@ Template: pierrefavresse
 }
 
 /* _____Header_____ */
-.header, .footer {
+body {
+  background-color: #fafafa;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
-  padding: 12px 150px;
+  padding-inline: 150px;
   align-items: flex-start;
-  box-shadow: 0px 2px 6px 0px rgba(25, 33, 61, 0.14);
+  position: fixed;
+  width: 100%;
+  transition: top 0.3s;
+  background-color: #fafafa;
 }
-.header-logo, .footer-logo {
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-block: 12px;
+  border-bottom: 1px solid #B4B9C9;
+}
+.header-content-logo, .footer-logo {
   object-fit: contain;
 }
-.header-nav ul, .footer-container-nav ul {
+.header-content-nav ul, .footer-container-nav ul {
   display: flex;
   gap: 14px;
   text-decoration: none;
   white-space: nowrap;
+  margin: inherit;
 }
-.header-nav ul li, .footer-container-nav ul li {
+.header-content-nav ul li, .footer-container-nav ul li {
   list-style: none;
 }
-.header-nav ul li a, .footer-container-nav ul li a {
+.header-content-nav ul li a, .footer-container-nav ul li a {
   text-decoration: none;
   color: #495057;
   font-size: 16px;
@@ -56,9 +72,10 @@ Template: pierrefavresse
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 45dvh;
-  border-bottom: 2px solid #B4B9C9;
+  height: 70dvh;
+  border-bottom: 1px solid #B4B9C9;
   margin-inline: 150px;
+  margin-bottom: 80px;
 }
 .landing-branding-title {
   display: flex;
@@ -99,6 +116,7 @@ Template: pierrefavresse
   font-size: 20px;
   color: #BAC0C6;
   padding-top: 15px;
+  text-align: center;
 }
 .landing-projects {
   display: grid;
@@ -106,29 +124,66 @@ Template: pierrefavresse
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   margin-inline: 150px;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+.landing-projects-post {
+  width: 100%;
+}
+.landing-projects-post-content {
+  width: 100%;
+}
+.landing-projects-post-content-image {
+  object-fit: cover;
+  width: 100%;
+}
+.landing-projects-post-content-image img {
+  width: 100%;
+}
+.landing-projects-post-content-title {
+  display: flex;
+}
+.landing-projects-post-content-title a {
+  color: #6D758F;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 /* _____Footer_____ */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 150px;
+  align-items: flex-start;
+  box-shadow: 0px 2px 6px 0px rgba(25, 33, 61, 0.14);
+  width: 100%;
+}
 .footer-container {
   display: flex;
   white-space: nowrap;
 }
 .footer-container-paragraph {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   color: #B4B9C9;
+  margin: inherit;
 }
 .footer-container-nav ul {
   gap: 0px;
+}
+.footer-container-nav ul li {
+  display: flex;
 }
 .footer-container-nav ul li a {
   color: #6D758F;
   font-weight: 400;
   text-decoration: underline;
+  font-size: 12px;
 }
 .footer-container-nav ul li span {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   padding-inline: 7px;
   color: #B4B9C9;
 }

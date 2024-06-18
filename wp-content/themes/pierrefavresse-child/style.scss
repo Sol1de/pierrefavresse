@@ -26,34 +26,51 @@ Template: pierrefavresse
 }
 
 /* _____Header_____ */
+body {
+  background-color: #fafafa;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 12px 150px;
+  padding-inline: 150px;
   align-items: flex-start;
-  box-shadow: 0px 2px 6px 0px rgba(25, 33, 61, 0.14);
+  position: fixed;
+  width: 100%;
+  transition: top 0.3s;
+  background-color: #fafafa;
 
-  &-logo {
-    object-fit: contain;
-  }
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-block: 12px;
+    border-bottom: 1px solid $line-color;
 
-  &-nav {
-
-    ul {
-      display: flex;
-      gap: 14px;
-      text-decoration: none;
-      white-space: nowrap;
-
-
-      li {
-        list-style: none;
-
-        a {
-          text-decoration: none;
-          color: $header-clr;
-          font-size: 16px;
-          font-weight: $extra-light;
+    &-logo {
+      object-fit: contain;
+    }
+  
+    &-nav {
+  
+      ul {
+        display: flex;
+        gap: 14px;
+        text-decoration: none;
+        white-space: nowrap;
+        margin: inherit;
+  
+  
+        li {
+          list-style: none;
+  
+          a {
+            text-decoration: none;
+            color: $header-clr;
+            font-size: 16px;
+            font-weight: $extra-light;
+          }
         }
       }
     }
@@ -69,9 +86,10 @@ Template: pierrefavresse
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 45dvh;
-    border-bottom: 2px solid $line-color;
+    height: 70dvh;
+    border-bottom: 1px solid $line-color;
     margin-inline: 150px;
+    margin-bottom: 80px;
 
     &-title {
       display: flex;
@@ -118,6 +136,7 @@ Template: pierrefavresse
         font-size: 20px;
         color: $minimal-clr;
         padding-top: 15px;
+        text-align: center;
       }
     }
   }
@@ -128,15 +147,50 @@ Template: pierrefavresse
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     margin-inline: 150px;
+    gap: 16px;
+    margin-bottom: 80px;
+
+    &-post {
+      width: 100%;
+
+      &-content {
+        width: 100%;
+
+        &-image {
+          object-fit: cover;
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        &-title {
+          display: flex;
+
+          a {
+            color: $main-clr;
+            text-decoration: none;
+            font-weight: $regular;
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 }
 
 /* _____Footer_____ */
 .footer {
-  @extend .header;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 150px;
+  align-items: flex-start;
+  box-shadow: 0px 2px 6px 0px rgba(25, 33, 61, 0.14);
+  width: 100%;
 
   &-logo {
-    @extend .header-logo;
+    @extend .header-content-logo;
   }
 
   &-container {
@@ -145,27 +199,30 @@ Template: pierrefavresse
 
     &-paragraph {
       font-weight: $regular;
-      font-size: 16px;
+      font-size: 12px;
       color: #B4B9C9;
+      margin: inherit;
     }
 
     &-nav {
-      @extend .header-nav;
+      @extend .header-content-nav;
   
       ul {
         gap: 0px;
   
         li {
+          display: flex;
   
           a {
             color: $main-clr;
             font-weight: $regular;
             text-decoration: underline;
+            font-size: 12px;
           }
   
           span {
             font-weight: $regular;
-            font-size: 16px;
+            font-size: 12px;
             padding-inline: 7px;
             color: #B4B9C9;
           }

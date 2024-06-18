@@ -28,14 +28,17 @@
 <div id="page" class="site">
 
     <header id="masthead" class="header">
-        <!-- Logo -->
-        <img class='header-logo' src="http://pierrefavresse.test/pierre-favresse/" alt="Logo-header">
 
-        <!-- Navigation -->
-        <?php wp_nav_menu([
-            'theme_location' => 'header',
-            'container' => 'nav',
-            'container_class' => 'header-nav',
-            'menu_class' => false,
-        ]) ?>
+        <div class="header-content">
+            <!-- Logo -->
+            <img class='header-content-logo' src="http://pierrefavresse.test/pierre-favresse/" alt="Logo-header">
+
+            <!-- Navigation -->
+            <?php wp_nav_menu([
+                'theme_location' => 'header',
+                'container' => 'nav',
+                'container_class' => 'header-content-nav',
+                'menu_class' => false,
+            ]) ?>
+        </div>
     </header><!-- #masthead -->
