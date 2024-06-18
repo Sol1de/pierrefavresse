@@ -28,6 +28,7 @@ Template: pierrefavresse
   justify-content: space-between;
   padding: 12px 150px;
   align-items: flex-start;
+  box-shadow: 0px 2px 6px 0px rgba(25, 33, 61, 0.14);
 }
 .header-logo, .footer-logo {
   object-fit: contain;
@@ -49,15 +50,15 @@ Template: pierrefavresse
 }
 
 /*_____Landing_____*/
-.landing {
-  height: 60dvh;
-}
 .landing-branding {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 45dvh;
+  border-bottom: 2px solid #B4B9C9;
+  margin-inline: 150px;
 }
 .landing-branding-title {
   display: flex;
@@ -69,13 +70,15 @@ Template: pierrefavresse
 .landing-branding-title-we {
   font-weight: 300;
   text-align: center;
-  margin-right: 10px;
+  padding-right: 10px;
   font-size: 60px;
+  margin: inherit;
 }
 .landing-branding-title-texte {
   font-weight: 300;
   text-align: center;
   font-size: 60px;
+  margin: inherit;
 }
 .landing-branding-title-cursor {
   display: flex;
@@ -95,6 +98,14 @@ Template: pierrefavresse
   font-weight: 300;
   font-size: 20px;
   color: #BAC0C6;
+  padding-top: 15px;
+}
+.landing-projects {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-inline: 150px;
 }
 
 /* _____Footer_____ */

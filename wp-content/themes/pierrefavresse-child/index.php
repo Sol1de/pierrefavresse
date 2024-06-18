@@ -25,7 +25,7 @@ get_header();
         </div>
 
         <div class="landing-branding-subtitle">
-            <h3 class="landing-branding-subtitle-paragraph">Design & Research Agency Paris</h3>
+            <h3 class="landing-branding-subtitle-paragraph">Design & Research Studio <br> Paris</h3>
         </div>
     </div>
 
