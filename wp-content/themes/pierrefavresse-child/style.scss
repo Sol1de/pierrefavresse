@@ -143,36 +143,41 @@ body {
 
   &-projects {
     display: grid;
-    grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     margin-inline: 150px;
     gap: 16px;
     margin-bottom: 80px;
 
-    &-post {
-      width: 100%;
-
-      &-content {
+    &-column {
+      
+      &-post {
         width: 100%;
-
-        &-image {
-          object-fit: cover;
+  
+        &-content {
           width: 100%;
-
-          img {
+          height: 100%;
+    
+          &-image {
             width: 100%;
+            height: 100%;
+  
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
-        }
-
-        &-title {
-          display: flex;
-
-          a {
-            color: $main-clr;
-            text-decoration: none;
-            font-weight: $regular;
-            font-size: 12px;
+  
+          &-title {
+            display: flex;
+  
+            a {
+              color: $main-clr;
+              text-decoration: none;
+              font-weight: $regular;
+              font-size: 12px;
+            }
           }
         }
       }

@@ -36,40 +36,41 @@ get_header();
 
         // Arguments pour WP_Query
         $args = array(
-            'post_type' => 'categories',  // Remplacez 'categories' par votre type de contenu personnalisé
-            'posts_per_page' => -1,  // Enlever la limite de posts
-            'tax_query' => array(
+            'post_type' => 'categories',
+            'posts_per_page' => -1,
+        );
+
+        if ($type !== 'all') {
+            $args['tax_query'] = array(
                 array(
-                    'taxonomy' => 'type_de_categorie',  // Remplacez 'type_de_categorie' par votre nom de taxonomie
+                    'taxonomy' => 'type_de_categorie',
                     'field' => 'slug',
                     'terms' => $type,
                 ),
-            ),
-        );
+            );
+        }
 
         // La requête WP_Query
         $query = new WP_Query($args);
 
-        // La boucle
+        // Posts publiés séparer en 2 listes distinctes
+        $even_posts = [];
+        $odd_posts = [];
+
+        //nombre total de post contenu dans la requête
+        $post_count = $query->found_posts;
+
+        // La boucle pour séparer les posts
         if ($query->have_posts()) :
+            $count = 0;
+
             while ($query->have_posts()) : $query->the_post();
-        ?>
-
-        <article id="post-<?php the_ID(); ?>" <?php post_class('landing-projects-post project-item'); ?>>
-            <div class="landing-projects-post-content">
-                <div class="landing-projects-post-content-image">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-                <h2 class="landing-projects-post-content-title">
-                    <a href="<?php the_permalink(); ?>" rel="bookmark">
-                        <?php the_title(); ?>
-                    </a>
-                </h2>
-            </div>
-        </article><!-- #post-<?php the_ID(); ?> -->
-
-
-        <?php
+                if ($count < ($post_count / 2)) {
+                    $even_posts[] = $post;
+                } else {
+                    $odd_posts[] = $post;
+                }
+                $count++;
             endwhile;
 
             // Réinitialiser les données de post
@@ -79,6 +80,63 @@ get_header();
             echo '<p>Aucun projet trouvé</p>';
         endif;
         ?>
+
+        <!-- Premier appel de WP_Query pour la première moitier des posts publié -->
+        <div class="landing-projects-column">
+            <?php
+            if (!empty($even_posts)) :
+                foreach ($even_posts as $post) :
+                    setup_postdata($post);
+            ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('landing-projects-column-post project-item'); ?>>
+                        <div class="landing-projects-column-post-content">
+                            <div class="landing-projects-column-post-content-image">
+                                <?php the_post_thumbnail(); ?>
+                            </div>
+                            <h2 class="landing-projects-column-post-content-title">
+                                <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h2>
+                        </div>
+                    </article><!-- #post-<?php the_ID(); ?> -->
+            <?php
+                endforeach;
+                wp_reset_postdata();
+            else :
+                echo '<p>Aucun projet trouvé</p>';
+            endif;
+            ?>
+        </div>
+
+        <!-- Deuxième appel de WP_Query pour la deuxième moitier des posts publié -->
+        <div class="landing-projects-column">
+            <?php
+            if (!empty($odd_posts)) :
+                foreach ($odd_posts as $post) :
+                    setup_postdata($post);
+            ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('landing-projects-column-post project-item'); ?>>
+                        <div class="landing-projects-column-post-content">
+                            <div class="landing-projects-column-post-content-image">
+                                <?php the_post_thumbnail(); ?>
+                            </div>
+                            <h2 class="landing-projects-column-post-content-title">
+                                <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h2>
+                        </div>
+                    </article><!-- #post-<?php the_ID(); ?> -->
+            <?php
+                endforeach;
+                wp_reset_postdata();
+            else :
+                echo '<p>Aucun projet trouvé</p>';
+            endif;
+            ?>
+        </div>
+
     </div>
 
 </main><!-- #main -->

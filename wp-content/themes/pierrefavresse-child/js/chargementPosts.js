@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     var menuLinks = document.querySelectorAll('.header-nav a');
-    
+
     menuLinks.forEach(function(link) {
         link.addEventListener('click', function(event) {
             event.preventDefault();
-            
+
             var url = link.getAttribute('href');
             var projectsContainer = document.querySelector('.landing-projects');
-            
+
             projectsContainer.classList.add('fade-out');
-            
+
             // Attendre la fin de l'animation de disparition avant de charger les nouveaux posts
             setTimeout(function() {
                 // Charger les nouveaux posts
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         var temp = document.createElement('div');
                         temp.innerHTML = html;
                         var newProjects = temp.querySelector('.landing-projects').innerHTML;
-                        
+
                         // Mettre à jour le contenu avec les nouveaux projets
                         projectsContainer.innerHTML = newProjects;
                         projectsContainer.classList.remove('fade-out');
