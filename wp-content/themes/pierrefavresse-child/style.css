@@ -35,7 +35,9 @@ body {
   position: fixed;
   width: 100%;
   transition: top 0.3s;
-  background-color: #fafafa;
+  background-color: rgba(250, 250, 250, 0.5294117647);
+  backdrop-filter: blur(4px);
+  z-index: 2;
 }
 .header-content {
   display: flex;
@@ -66,6 +68,10 @@ body {
 }
 
 /*_____Landing_____*/
+.site-main {
+  z-index: 1;
+}
+
 .landing-branding {
   height: 100%;
   display: flex;
@@ -126,6 +132,11 @@ body {
   gap: 16px;
   margin-bottom: 80px;
 }
+.landing-projects-column {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
 .landing-projects-column-post {
   width: 100%;
 }
@@ -146,10 +157,26 @@ body {
   display: flex;
 }
 .landing-projects-column-post-content-title a {
-  color: #6D758F;
+  position: relative;
+  display: inline-block;
   text-decoration: none;
+  color: #6D758F;
   font-weight: 400;
   font-size: 12px;
+}
+.landing-projects-column-post-content-title a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: block;
+  background: #6D758F;
+  transition: width 0.4s;
+  bottom: -2px;
+  left: 0;
+}
+.landing-projects-column-post-content-title a:hover::after {
+  width: 100%;
 }
 
 /* _____Footer_____ */

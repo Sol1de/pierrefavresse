@@ -38,7 +38,9 @@ body {
   position: fixed;
   width: 100%;
   transition: top 0.3s;
-  background-color: #fafafa;
+  background-color: #fafafa87;
+  backdrop-filter: blur(4px);
+  z-index: 2;
 
   &-content {
     display: flex;
@@ -78,6 +80,10 @@ body {
 }
 
 /*_____Landing_____*/
+.site-main {
+  z-index: 1;
+}
+
 .landing {
 
   &-branding {
@@ -150,6 +156,9 @@ body {
     margin-bottom: 80px;
 
     &-column {
+       display: flex;
+       flex-direction: column;
+       gap: 38px;
       
       &-post {
         width: 100%;
@@ -173,10 +182,28 @@ body {
             display: flex;
   
             a {
-              color: $main-clr;
+              position: relative;
+              display: inline-block;
               text-decoration: none;
+              color: $main-clr;
               font-weight: $regular;
               font-size: 12px;
+
+              &::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 1px;
+                display: block;
+                background: $main-clr; // Utilisez la couleur principale définie dans vos variables SCSS
+                transition: width 0.4s;
+                bottom: -2px; // Ajustez si nécessaire pour aligner la ligne
+                left: 0;
+              }
+
+              &:hover::after {
+                width: 100%;
+              }
             }
           }
         }
