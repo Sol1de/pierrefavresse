@@ -79,7 +79,7 @@ body {
   }
 }
 
-/*_____Landing_____*/
+/*_____Index_____*/
 .site-main {
   z-index: 1;
 }
@@ -212,14 +212,76 @@ body {
   }
 }
 
+/* _____Single_____ */
+.post {
+  display: flex;
+  padding-top: 130px;
+  padding-bottom: 80px;
+  gap: 16px;
+  margin-inline: 150px;
+  margin-bottom: inherit;
+  border-bottom: 1px solid #D6D6D6;
+
+  &-thumbnail {
+    width: 60%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    width: 40%;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    &-title {
+      margin: inherit;
+      font-weight: $light;
+      font-size: 42px;
+      color: $main-clr;
+      line-height: 100%;
+    }
+
+    &-paragraph {
+
+      p {
+        font-weight: $extra-light;
+        font-size: 16px;
+        color: $main-clr;
+      }
+    }
+  }
+
+  &-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin-inline: 150px;
+    column-gap: 16px;
+    row-gap: 32px;
+    padding-block: 80px;
+
+    &-container {
+      width: 100%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
 /* _____Footer_____ */
 .footer {
   display: flex;
+  padding-block: 12px;
+  margin-inline: 150px;
+  border-top: 1px solid $line-color;
   justify-content: space-between;
-  padding: 12px 150px;
-  align-items: flex-start;
-  box-shadow: 0px 2px 6px 0px rgba(25, 33, 61, 0.14);
-  width: 100%;
 
   &-logo {
     @extend .header-content-logo;

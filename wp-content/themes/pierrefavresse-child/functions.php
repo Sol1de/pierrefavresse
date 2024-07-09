@@ -6,15 +6,16 @@ function mes_styles() {
 }
 add_action('wp_enqueue_scripts', 'mes_styles');
 
-function wpb_hook_javascript() {
-    if (is_home()) { 
-        ?>
-        <script type="text/javascript" src="wp-content/themes/pierrefavresse-child/js/script.js"></script>
-        <script type="text/javascript" src="wp-content/themes/pierrefavresse-child/js/chargementPosts.js"></script>
-        <?php
+function enqueue_custom_scripts() {
+    if (is_single()){
+        wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/script.js', array(), null, true);
+    }
+    else {
+        wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/script.js', array(), null, true);
+        wp_enqueue_script('custom-chargementPosts', get_stylesheet_directory_uri() . '/js/chargementPosts.js', array(), null, true);
     }
 }
-add_action('wp_footer', 'wpb_hook_javascript');
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 register_nav_menus(
     array(
@@ -36,19 +37,21 @@ function inject_custom_post_heights() {
     $custom_css = "<style type='text/css'>";
 
     if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            $post_id = get_the_ID();
-            $height = get_field('hauteur_du_post', $post_id);
+        if (is_home()){
+            while ($query->have_posts()) {
+                $query->the_post();
+                $post_id = get_the_ID();
+                $height = get_field('hauteur_du_post', $post_id);
 
-            if ($height) {
-                $custom_css .= "
-                    #post-$post_id {
-                        height: $height;
-                    }
-                ";
+                if ($height) {
+                    $custom_css .= "
+                        #post-$post_id {
+                            height: $height;
+                        }
+                    ";
+                }
             }
-        }
+        }       
     }
 
     // Fermer le CSS

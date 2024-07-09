@@ -120,9 +120,7 @@ var currentScrollPos = window.scrollY;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("masthead").style.top = "0";
   } else {
-    document.getElementById("masthead").style.top = "-300px";
+    document.getElementById("masthead").style.top = "-50px";
   }
   prevScrollpos = currentScrollPos;
 }
-
-//fonction générat une hauteur aléatoire pour les posts
