@@ -18,15 +18,46 @@ get_header();
 
         get_template_part( 'template-parts/content', get_post_type() );
 
-        // Affiche les images liées au projet
+        // Affiche les images annexes avec les tailles sélectionnées
         $images_supplementaire = get_field('images_supplementaire');
         if ($images_supplementaire) :
+            // Diviser les images en deux listes
+            $half = ceil(count($images_supplementaire) / 2);
+            $first_half = array_slice($images_supplementaire, 0, $half);
+            $second_half = array_slice($images_supplementaire, $half);
+
             echo '<div class="post-images">';
-            foreach ($images_supplementaire as $image) :
-                echo '<div class="post-images-container">';
-                echo wp_get_attachment_image($image['ID'], 'full');
-                echo '</div>';
+            
+            // Premier conteneur
+            echo '<div class="post-images-column">';
+            foreach ($first_half as $index => $image_data) :
+                $image = $image_data['image'];
+                $size = $image_data['hauteur'] ? $image_data['hauteur'] : '435px';
+                $image_url = wp_get_attachment_image_src($image['ID'], $size);
+                
+                if ($image_url) {
+                    echo '<div class="post-images-column-container post-image-' . $index . '">';
+                    echo '<img src="' . esc_url($image_url[0]) . '" alt="' . esc_attr($image['alt']) . '" />';
+                    echo '</div>';
+                }
             endforeach;
+            echo '</div>';
+
+            // Deuxième conteneur
+            echo '<div class="post-images-column">';
+            foreach ($second_half as $index => $image_data) :
+                $image = $image_data['image'];
+                $size = $image_data['hauteur'] ? $image_data['hauteur'] : '435px';
+                $image_url = wp_get_attachment_image_src($image['ID'], $size);
+                
+                if ($image_url) {
+                    echo '<div class="post-images-column-container post-image-' . ($index + $half) . '">';
+                    echo '<img src="' . esc_url($image_url[0]) . '" alt="' . esc_attr($image['alt']) . '" />';
+                    echo '</div>';
+                }
+            endforeach;
+            echo '</div>';
+
             echo '</div>';
         endif;
 

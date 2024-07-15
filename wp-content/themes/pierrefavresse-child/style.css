@@ -231,13 +231,17 @@ body {
   padding-block: 80px;
   justify-content: center;
 }
-.post-images-container {
+.post-images-column {
+  display: grid;
+  gap: 32px;
+}
+.post-images-column-container {
   width: 100%;
 }
-.post-images-container img {
+.post-images-column-container img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* _____Footer_____ */

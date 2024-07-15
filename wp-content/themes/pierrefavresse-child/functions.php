@@ -65,4 +65,34 @@ function inject_custom_post_heights() {
 }
 add_action('wp_head', 'inject_custom_post_heights');
 
-?>
+function inject_custom_image_sizes() {
+    if (is_single()) {
+        global $post;
+        $images_supplementaire = get_field('images_supplementaire', $post->ID);
+
+        // Commencer à construire le CSS
+        $custom_css = "<style type='text/css'>";
+
+        if ($images_supplementaire) {
+            foreach ($images_supplementaire as $index => $image_data) {
+                $image_id = $image_data['image']['ID'];
+                $size = $image_data['hauteur'];
+
+                if ($size) {
+                    $custom_css .= "
+                        .post-image-$index {
+                            height: $size;
+                        }
+                    ";
+                }
+            }
+        }
+
+        // Fermer le CSS
+        $custom_css .= "</style>";
+
+        // Injecter le CSS dans le <head>
+        echo $custom_css;
+    }
+}
+add_action('wp_head', 'inject_custom_image_sizes');
