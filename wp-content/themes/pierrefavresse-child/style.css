@@ -127,10 +127,13 @@ body {
 .landing-projects {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  margin-inline: 150px;
+  margin-inline: auto;
   gap: 16px;
   margin-bottom: 80px;
+  padding-inline: 150px;
+  justify-content: center;
+  justify-items: stretch;
+  width: 100%;
 }
 .landing-projects-column {
   display: flex;
@@ -181,22 +184,26 @@ body {
 
 /* _____Single_____ */
 .post {
-  display: flex;
-  padding-top: 130px;
-  padding-bottom: 80px;
-  gap: 16px;
+  display: grid;
   margin-inline: 150px;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  padding-top: 75px;
+  justify-content: center;
   margin-bottom: inherit;
+  padding-bottom: 80px;
   border-bottom: 1px solid #D6D6D6;
 }
 .post-thumbnail {
-  width: 60%;
+  height: auto;
+  width: 100%;
 }
 .post-thumbnail img {
+  height: auto;
   width: 100%;
 }
 .post-content {
-  width: 40%;
+  width: 100%;
   display: flex;
   gap: 16px;
   flex-direction: column;
@@ -216,11 +223,13 @@ body {
 .post-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  margin-inline: 150px;
+  padding-inline: 150px;
   column-gap: 16px;
+  margin-inline: auto;
+  width: 100%;
   row-gap: 32px;
   padding-block: 80px;
+  justify-content: center;
 }
 .post-images-container {
   width: 100%;

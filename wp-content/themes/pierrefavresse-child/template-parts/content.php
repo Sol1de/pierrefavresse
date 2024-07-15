@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" class="post" <?php post_class(); ?>>
 
     <?php pierrefavresse_post_thumbnail(); ?>
-
+    
     <div class="post-content">
         <?php
         // Title of the post
