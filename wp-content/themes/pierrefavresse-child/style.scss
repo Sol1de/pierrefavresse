@@ -287,6 +287,41 @@ body {
      }
     }
   }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 150px;
+    padding-block: 20px;
+
+    &-button {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        display: block;
+        background: $line-color;
+        transition: width 0.4s;
+        bottom: 0;
+        left: 0;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+       a {
+        text-decoration: none;
+        color: $main-clr;
+        font-weight: $light;
+       }
+    }
+  }
 }
 
 /* _____Footer_____ */

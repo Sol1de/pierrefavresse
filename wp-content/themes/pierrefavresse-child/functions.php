@@ -96,3 +96,20 @@ function inject_custom_image_sizes() {
     }
 }
 add_action('wp_head', 'inject_custom_image_sizes');
+
+// Fonction pour ajouter des classes personnalisées aux liens de navigation (single.php)
+function custom_post_navigation_template($template, $class) {
+    $template = '
+    <nav class="post-nav" role="navigation">%3$s</nav>';
+    return $template;
+}
+add_filter('navigation_markup_template', 'custom_post_navigation_template', 10, 2);
+
+function custom_navigation_markup($link) {
+    // Ajouter des classes personnalisées pour les liens de navigation
+    $link = str_replace('class="nav-previous"', 'class="post-nav-button"', $link);
+    $link = str_replace('class="nav-next"', 'class="post-nav-button"', $link);
+    return $link;
+}
+add_filter('previous_post_link', 'custom_navigation_markup');
+add_filter('next_post_link', 'custom_navigation_markup');
