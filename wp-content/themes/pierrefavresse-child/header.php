@@ -29,6 +29,22 @@
     <header id="masthead" class="header">
 
         <div class="header-content">
+            
+            <!-- Burger -->
+            <input type="checkbox" id="menu_checkbox" class="header-content-button" onclick="manageNav()">
+            <label for="menu_checkbox" id="label_checkbox">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+
+            <?php wp_nav_menu([
+                'theme_location' => 'header',
+                'container' => 'nav',
+                'container_class' => 'header-content-burger',
+                'menu_class' => false,
+            ]) ?>
+
             <!-- Logo -->
             <img class='header-content-logo' src="http://pierrefavresse.test/pierre-favresse/" alt="Logo-header">
 

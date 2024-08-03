@@ -1,0 +1,190 @@
+@use 'color.scss';
+
+@media screen and (max-width: 1165px) {
+  // Main
+  .landing {
+
+    &-branding {
+
+      &-title {
+        flex-direction: column;
+
+        &-we {
+          padding-right: 0px;
+        }
+
+        &-cursor {
+          display: none;
+        }
+      }
+    }
+  }
+  // Footer
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  // Header
+  .header {
+    padding-inline: 80px;
+  }
+
+  // Main
+  .landing {
+
+    &-branding {
+      margin-inline: 80px;
+      margin-bottom: 40px;
+    }
+
+    &-projects {
+      padding-inline: 80px;
+      margin-bottom: 60px;
+    }
+  }
+
+  // Footer
+  .footer {
+    margin-inline: 80px;
+  }
+}
+
+@media screen and (max-width: 850px){
+  // Footer
+  .footer {
+
+    &-container {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  // Header
+  .header {
+
+    &-content {
+      justify-content: flex-end;
+
+      label {
+        display: block;
+      }
+
+      &-burger {
+        display: block;
+      }
+
+      &-nav {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // Main
+    .landing {
+
+      &-branding {
+
+        &-title {
+          &-we {
+            font-size: 40px;
+          }
+
+          &-texte {
+            font-size: 40px;
+          }
+        }
+
+        &-subtitle {
+
+          &-paragraph {
+            font-size: 16px;
+            padding-top: 0px;
+          }
+        }
+      }
+
+      &-projects {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    // Header
+    .header {
+      padding-inline: 40px;
+
+      &-content {
+
+        label {
+          left: 40px;
+        }
+      }
+    }
+
+    // Main
+    .landing {
+
+      &-branding {
+        margin-inline: 40px;
+
+        &-title {
+
+          &-we {
+            font-size: 25px;
+          }
+
+          &-texte {
+            font-size: 25px;
+          }
+        }
+
+        &-subtitle {
+
+          &-paragraph {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-projects {
+        padding-inline: 40px;
+      }
+    }
+
+    .footer {
+      margin-inline: 40px;
+
+      &-container {
+
+        &-paragraph {
+          font-size: 10px;
+        }
+
+        &-nav {
+
+          ul {
+
+            span {
+              font-size: 10px;
+            }
+
+            li {
+
+              a {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

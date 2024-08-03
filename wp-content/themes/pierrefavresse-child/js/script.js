@@ -124,3 +124,28 @@ var currentScrollPos = window.scrollY;
   }
   prevScrollpos = currentScrollPos;
 }
+
+//fonction d'utilisation du menuburger
+function manageNav() {
+    const burger = document.querySelector("#menu_checkbox");
+    const menu = document.querySelector(".header-content-burger");
+    const div = document.querySelector(".header-content-burger > div");
+
+    if (burger.checked == false) {
+        menu.style.width = "0px";
+    }
+
+    else {
+        menu.style.width = "200px";
+    }
+
+    window.addEventListener('scroll', function() {
+    
+        // Vérifiez si le menu est ouvert
+        if (burger.checked == true) {
+            // Fermez le menu
+            burger.checked = false;
+            menu.style.width = "0px";
+        }
+    });
+}

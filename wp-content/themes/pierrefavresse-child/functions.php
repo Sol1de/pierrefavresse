@@ -113,3 +113,14 @@ function custom_navigation_markup($link) {
 }
 add_filter('previous_post_link', 'custom_navigation_markup');
 add_filter('next_post_link', 'custom_navigation_markup');
+
+// Fonctionpour ajouter des séparateur entres les éléments du footer 
+function add_menu_separators($items, $args) {
+    if ($args->theme_location == 'footer') {
+        $items = preg_replace('/<\/li>\s<li/', '</li><span class="separator">|</span><li', $items);
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'add_menu_separators', 10, 2);
+
+

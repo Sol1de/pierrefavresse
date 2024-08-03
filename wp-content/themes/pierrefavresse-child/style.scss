@@ -16,7 +16,8 @@ Author URI: https://github.com/Sol1de
 Text Domain: pierrefavresse-child
 Template: pierrefavresse
 */
-@import 'color.scss';
+@use 'responsive.scss';
+@use 'color.scss';
 
 * {
   margin: 0;
@@ -40,7 +41,7 @@ body {
   transition: top 0.3s;
   background-color: #fafafa87;
   backdrop-filter: blur(4px);
-  z-index: 2;
+  z-index: 4;
 
   &-content {
     display: flex;
@@ -49,6 +50,103 @@ body {
     height: 100%;
     padding-block: 12px;
     border-bottom: 1px solid $line-color;
+
+    &-button {
+      display: none;
+
+      &:checked + label div:first-child {
+        top: -5px;
+        left: 1px;
+        width: 20px;
+        transform: rotateZ(45deg);
+        background-color: #ffff;
+      }
+
+      &:checked + label div:last-child {
+        top: 12px;
+        left: 6px;
+        width: 20px;
+        transform: rotateZ(45deg);
+        background-color: #ffff;
+      }
+
+      &:checked + label div:nth-child(2) {
+        width: 40px;
+        top: 0;
+        transform: rotateZ(-45deg);
+        right: 5px;
+        background-color: #ffff;
+      }
+    }
+
+    label {
+      z-index: 3;
+      display: none;
+      position: absolute;
+      top: 13px;
+      left: 80px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      div {
+        z-index: 1;
+        position: relative;
+        top: 0;
+        height: 2px;
+        background-color: #000000;
+        margin-bottom: 7px;
+        transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right;
+        border-radius: 2px;
+      }
+
+      div:first-child {
+        transform-origin: 0;
+        width: 30px;
+      }
+
+      div:last-child {
+        margin-bottom: 0;
+        transform-origin: 30px;
+        width: 30px;
+      }
+
+      div:nth-child(2) {
+        right: 0;
+        width: 30px;
+      }
+    }
+
+    &-burger {
+      display: none;
+      height: 150vh;
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #111111d4;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+
+      ul {
+        margin: inherit;
+        padding-left: 10px;
+
+        li {
+          list-style: none;
+          
+
+          a {
+            color: white;
+            white-space: nowrap;
+            text-decoration: none;
+            font-weight: $extra-light;
+          }
+        }
+      }
+    }
 
     &-logo {
       object-fit: contain;
@@ -81,7 +179,7 @@ body {
 
 /*_____Index_____*/
 .site-main {
-  z-index: 1;
+  z-index: 3;
 }
 
 .landing {
@@ -150,7 +248,6 @@ body {
   &-projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-inline: auto;
     gap: 16px;
     margin-bottom: 80px;
     padding-inline: 150px;
@@ -333,12 +430,14 @@ body {
   justify-content: space-between;
 
   &-logo {
-    @extend .header-content-logo;
+    object-fit: contain;
   }
 
   &-container {
     display: flex;
     white-space: nowrap;
+    align-items: center;
+    gap: 3px;
 
     &-paragraph {
       font-weight: $regular;
@@ -348,19 +447,31 @@ body {
     }
 
     &-nav {
-      @extend .header-content-nav;
   
       ul {
         gap: 0px;
+        display: flex;
+        text-decoration: none;
+        white-space: nowrap;
+        margin: inherit;
+
+        span {
+          font-weight: 400;
+          font-size: 12px;
+          color: #B4B9C9;
+          padding-inline: 3px;
+        }
   
         li {
           display: flex;
+          list-style: none;
   
           a {
             color: $main-clr;
             font-weight: $regular;
             text-decoration: underline;
             font-size: 12px;
+            text-decoration: none;
           }
   
           span {

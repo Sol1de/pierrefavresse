@@ -13,17 +13,16 @@
 
 	<footer id="colophon" class="footer">
 		<!-- menu -->
-		<img class='footer-logo' src="http://pierrefavresse.test/pierre-favresse/" alt="Logo-footer">
+		<img class='footer-logo' src="http://pierrefavresse.test/wp-content/uploads/2024/06/Pierre-Favresse.png" alt="Logo-footer">
 
 		<!-- navigation -->
 		<div class="footer-container">
-			<p class="footer-container-paragraph">Copyright © 2025 Agence Pierre Favresse | Tout droits réservés</p>
+			<p class="footer-container-paragraph">Copyright © 2025 Agence Pierre Favresse | Tout droits réservés | </p>
 			<?php wp_nav_menu([
 				'theme_location' => 'footer',
 				'container' => 'nav',
 				'container_class' => 'footer-container-nav',
 				'menu_class' => false,
-				'before' => '<span class="separator">|</span>',
 			]) ?>
 		</div>
 	</footer><!-- #colophon -->
