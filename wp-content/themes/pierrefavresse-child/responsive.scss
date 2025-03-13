@@ -40,6 +40,10 @@
     &-images {
       grid-template-columns: 1fr;
     }
+
+    &-nav {
+      padding-inline: 80px;
+    }
   }
 
   // Main
@@ -156,6 +160,10 @@
       &-images {
         padding-inline: 10px;
       }
+
+      &-nav {
+        padding-inline: 10px;
+      }
     }
 
     // Main
@@ -189,7 +197,7 @@
     }
 
     .footer {
-      margin-inline: 40px;
+      margin-inline: 10px;
 
       &-container {
 

@@ -24,6 +24,9 @@
   .post-images {
     grid-template-columns: 1fr;
   }
+  .post-nav {
+    padding-inline: 80px;
+  }
   .landing-branding {
     margin-inline: 80px;
     margin-bottom: 40px;
@@ -90,6 +93,9 @@
   .post-images {
     padding-inline: 10px;
   }
+  .post-nav {
+    padding-inline: 10px;
+  }
   .landing-branding {
     margin-inline: 10px;
   }
@@ -106,7 +112,7 @@
     padding-inline: 10px;
   }
   .footer {
-    margin-inline: 40px;
+    margin-inline: 10px;
   }
   .footer-container-paragraph {
     font-size: 10px;
@@ -597,6 +603,9 @@ body {
   .post-images {
     grid-template-columns: 1fr;
   }
+  .post-nav {
+    padding-inline: 80px;
+  }
   .landing-branding {
     margin-inline: 80px;
     margin-bottom: 40px;
@@ -663,6 +672,9 @@ body {
   .post-images {
     padding-inline: 10px;
   }
+  .post-nav {
+    padding-inline: 10px;
+  }
   .landing-branding {
     margin-inline: 10px;
   }
@@ -679,7 +691,7 @@ body {
     padding-inline: 10px;
   }
   .footer {
-    margin-inline: 40px;
+    margin-inline: 10px;
   }
   .footer-container-paragraph {
     font-size: 10px;
