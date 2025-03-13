@@ -131,6 +131,7 @@ body {
   height: 100%;
   padding-block: 12px;
   border-bottom: 1px solid #B4B9C9;
+  align-items: center;
 }
 .header-content-button {
   display: none;
@@ -216,7 +217,6 @@ body {
   font-weight: 200;
 }
 .header-content-logo {
-  object-fit: contain;
   font-size: 20px;
   margin: 0;
   padding: 0;
@@ -453,7 +453,9 @@ body {
   justify-content: space-between;
 }
 .footer-logo {
-  object-fit: contain;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 .footer-container {
   display: flex;

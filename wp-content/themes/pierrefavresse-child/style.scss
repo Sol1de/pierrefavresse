@@ -50,6 +50,7 @@ body {
     height: 100%;
     padding-block: 12px;
     border-bottom: 1px solid $line-color;
+    align-items: center;
 
     &-button {
       display: none;
@@ -149,7 +150,6 @@ body {
     }
 
     &-logo {
-      object-fit: contain;
       font-size: 20px;
       margin: 0;
       padding: 0;
@@ -433,7 +433,9 @@ body {
   justify-content: space-between;
 
   &-logo {
-    object-fit: contain;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
   }
 
   &-container {
