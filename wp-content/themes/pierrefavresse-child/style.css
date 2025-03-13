@@ -18,6 +18,12 @@
   .header {
     padding-inline: 80px;
   }
+  .post {
+    grid-template-columns: 1fr;
+  }
+  .post-images {
+    grid-template-columns: 1fr;
+  }
   .landing-branding {
     margin-inline: 80px;
     margin-bottom: 40px;
@@ -50,6 +56,12 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .post {
+    margin-inline: 80px;
+  }
+  .post-images {
+    padding-inline: 80px;
+  }
   .landing-branding-title-we {
     font-size: 40px;
   }
@@ -71,6 +83,12 @@
   }
   .header-content label {
     left: 10px;
+  }
+  .post {
+    margin-inline: 10px;
+  }
+  .post-images {
+    padding-inline: 10px;
   }
   .landing-branding {
     margin-inline: 10px;
@@ -573,6 +591,12 @@ body {
   .header {
     padding-inline: 80px;
   }
+  .post {
+    grid-template-columns: 1fr;
+  }
+  .post-images {
+    grid-template-columns: 1fr;
+  }
   .landing-branding {
     margin-inline: 80px;
     margin-bottom: 40px;
@@ -605,6 +629,12 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
+  .post {
+    margin-inline: 80px;
+  }
+  .post-images {
+    padding-inline: 80px;
+  }
   .landing-branding-title-we {
     font-size: 40px;
   }
@@ -626,6 +656,12 @@ body {
   }
   .header-content label {
     left: 10px;
+  }
+  .post {
+    margin-inline: 10px;
+  }
+  .post-images {
+    padding-inline: 10px;
   }
   .landing-branding {
     margin-inline: 10px;

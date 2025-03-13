@@ -33,6 +33,15 @@
     padding-inline: 80px;
   }
 
+  //post
+  .post {
+    grid-template-columns: 1fr;
+
+    &-images {
+      grid-template-columns: 1fr;
+    }
+  }
+
   // Main
   .landing {
 
@@ -86,6 +95,16 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  //post
+  .post {
+    margin-inline: 80px;
+
+    &-images {
+      padding-inline: 80px;
+    }
+  }
+
   // Main
     .landing {
 
@@ -127,6 +146,15 @@
         label {
           left: 10px;
         }
+      }
+    }
+
+    //post
+    .post {
+      margin-inline: 10px;
+
+      &-images {
+        padding-inline: 10px;
       }
     }
 
