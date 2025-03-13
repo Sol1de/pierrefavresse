@@ -24,6 +24,9 @@
   .post-images {
     grid-template-columns: 1fr;
   }
+  .post-images-column-container {
+    max-height: 450px;
+  }
   .post-nav {
     padding-inline: 80px;
   }
@@ -78,6 +81,9 @@
   .landing-projects {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+  .landing-projects-column-post {
+    max-height: 450px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -603,6 +609,9 @@ body {
   .post-images {
     grid-template-columns: 1fr;
   }
+  .post-images-column-container {
+    max-height: 450px;
+  }
   .post-nav {
     padding-inline: 80px;
   }
@@ -657,6 +666,9 @@ body {
   .landing-projects {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+  .landing-projects-column-post {
+    max-height: 450px;
   }
 }
 @media screen and (max-width: 450px) {
