@@ -67,13 +67,13 @@
 }
 @media screen and (max-width: 450px) {
   .header {
-    padding-inline: 40px;
+    padding-inline: 10px;
   }
   .header-content label {
-    left: 40px;
+    left: 10px;
   }
   .landing-branding {
-    margin-inline: 40px;
+    margin-inline: 10px;
   }
   .landing-branding-title-we {
     font-size: 25px;
@@ -85,7 +85,7 @@
     font-size: 16px;
   }
   .landing-projects {
-    padding-inline: 40px;
+    padding-inline: 10px;
   }
   .footer {
     margin-inline: 40px;
@@ -217,6 +217,9 @@ body {
 }
 .header-content-logo {
   object-fit: contain;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 .header-content-nav ul {
   display: flex;
@@ -617,13 +620,13 @@ body {
 }
 @media screen and (max-width: 450px) {
   .header {
-    padding-inline: 40px;
+    padding-inline: 10px;
   }
   .header-content label {
-    left: 40px;
+    left: 10px;
   }
   .landing-branding {
-    margin-inline: 40px;
+    margin-inline: 10px;
   }
   .landing-branding-title-we {
     font-size: 25px;
@@ -635,7 +638,7 @@ body {
     font-size: 16px;
   }
   .landing-projects {
-    padding-inline: 40px;
+    padding-inline: 10px;
   }
   .footer {
     margin-inline: 40px;

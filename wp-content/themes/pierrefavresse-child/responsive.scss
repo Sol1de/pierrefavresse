@@ -120,12 +120,12 @@
   @media screen and (max-width: 450px) {
     // Header
     .header {
-      padding-inline: 40px;
+      padding-inline: 10px;
 
       &-content {
 
         label {
-          left: 40px;
+          left: 10px;
         }
       }
     }
@@ -134,7 +134,7 @@
     .landing {
 
       &-branding {
-        margin-inline: 40px;
+        margin-inline: 10px;
 
         &-title {
 
@@ -156,7 +156,7 @@
       }
 
       &-projects {
-        padding-inline: 40px;
+        padding-inline: 10px;
       }
     }
 

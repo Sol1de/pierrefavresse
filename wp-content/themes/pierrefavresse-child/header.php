@@ -46,7 +46,8 @@
             ]) ?>
 
             <!-- Logo -->
-            <img class='header-content-logo' src="http://pierrefavresse.test/pierre-favresse/" alt="Logo-header">
+            <p class='header-content-logo'>Pierre Favresse</p>
+            <!--<img class='header-content-logo' src="http://pierrefavresse.test/wp-content/uploads/2025/03/Pierre-Favresse.png" alt="Logo-header">-->
 
             <!-- Navigation -->
             <?php wp_nav_menu([
