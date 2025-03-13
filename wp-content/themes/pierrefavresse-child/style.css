@@ -1,3 +1,22 @@
+/*
+Theme Name: theme enfant de pierrefavresse
+Description: surcouche du theme pierreFavresse
+Author: Olivier DELMAS
+Author URI: https://github.com/Sol1de
+Text Domain: pierrefavresse-child
+Template: pierrefavresse
+*/
+
+@charset "UTF-8";
+/*
+Theme Name: pierrefavresse child
+Description: thème enfant du thème parent pierrefavresse (surcouche)
+Author: Olivier Delmas
+Author URI: https://github.com/Sol1de
+Text Domain: pierrefavresse-child
+Template: pierrefavresse
+*/
+
 @media screen and (max-width: 1165px) {
   .landing-branding-title {
     flex-direction: column;
